@@ -1,0 +1,100 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Helvetica Neue', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  background: #f5f6f8;
+  color: #222;
+}
+
+.app { max-width: 1100px; margin: 0 auto; padding: 16px 20px 60px; }
+
+header h1 { margin: 8px 0 4px; font-size: 1.5rem; }
+
+.disclaimer {
+  background: #fff3cd;
+  border: 1px solid #ffe08a;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+}
+
+.scenario-bar { display: flex; gap: 8px; margin: 14px 0; flex-wrap: wrap; }
+
+button {
+  border: 1px solid #bbb;
+  background: #fff;
+  border-radius: 6px;
+  padding: 6px 14px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+button:hover { background: #eef3fb; }
+button.active { background: #1f77b4; color: #fff; border-color: #1f77b4; }
+button.primary { background: #1f77b4; color: #fff; border-color: #1f77b4; font-weight: 600; }
+button.primary:disabled { opacity: 0.6; cursor: wait; }
+button.danger { color: #b03030; }
+
+.scenario-info {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 0.92rem;
+}
+.scenario-info ul { margin: 6px 0; padding-left: 20px; color: #444; }
+
+.meta { color: #777; font-size: 0.8rem; }
+
+.panel {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-top: 16px;
+}
+.panel h2 { font-size: 1.05rem; margin: 4px 0 10px; }
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+.hint { color: #888; font-size: 0.82rem; }
+
+.waveform-plot { width: 100%; }
+.map-plot, .residual-plot { width: 100%; }
+
+.actions { display: flex; align-items: center; gap: 12px; margin-top: 8px; }
+.save-msg { color: #2a7d2a; font-size: 0.85rem; }
+
+.status-row { display: flex; gap: 14px; flex-wrap: wrap; }
+
+.status-card {
+  flex: 1 1 380px;
+  border: 1px solid #ddd;
+  border-left-width: 5px;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 0.9rem;
+}
+.status-card h3 { margin: 2px 0 8px; font-size: 0.98rem; }
+.status-card.ok { border-left-color: #2ca02c; }
+.status-card.poorly_constrained { border-left-color: #e6a700; }
+.status-card.unlocatable { border-left-color: #d62728; background: #fff8f8; }
+
+.badge {
+  font-size: 0.72rem;
+  padding: 2px 8px;
+  border-radius: 10px;
+  background: #eee;
+  vertical-align: middle;
+}
+.status-card.ok .badge { background: #d9f0d9; color: #1e6b1e; }
+.status-card.poorly_constrained .badge { background: #fdf0c8; color: #8a6d00; }
+.status-card.unlocatable .badge { background: #f8d7d7; color: #a02020; }
+
+.reasons { margin: 6px 0; padding-left: 18px; color: #8a3030; }
+.status-card.ok .reasons { color: #555; }

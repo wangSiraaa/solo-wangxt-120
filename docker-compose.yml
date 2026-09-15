@@ -1,0 +1,37 @@
+version: "3.8"
+
+# 教学演示部署: PostGIS + 后端 + 前端
+# 后端默认使用内存场景存储; 设置 DATABASE_URL 后可将 app/store.py
+# 替换为 SQLAlchemy 实现以持久化到 PostGIS (见 backend/app/db/schema.sql)。
+
+services:
+  db:
+    image: postgis/postgis:16-3.4
+    environment:
+      POSTGRES_USER: geo
+      POSTGRES_PASSWORD: geo
+      POSTGRES_DB: geoteach
+    volumes:
+      - ./backend/app/db/schema.sql:/docker-entrypoint-initdb.d/schema.sql:ro
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  backend:
+    build: ./backend
+    environment:
+      DATABASE_URL: postgresql://geo:geo@db:5432/geoteach
+    depends_on:
+      - db
+    ports:
+      - "8000:8000"
+
+  frontend:
+    build: ./frontend
+    depends_on:
+      - backend
+    ports:
+      - "5173:80"
+
+volumes:
+  pgdata:

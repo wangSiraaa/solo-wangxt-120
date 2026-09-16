@@ -24,6 +24,7 @@ class PickOut(PickIn):
 
 class PicksUpdate(BaseModel):
     picks: list[PickIn]
+    author: str | None = None  # 修订人署名, 写入修订历史
 
 
 class ScenarioSummary(BaseModel):
@@ -47,6 +48,42 @@ class WaveformOut(BaseModel):
     sample_rate: float
     t: list[float]
     y: list[float]
+
+
+class SampleDataOut(BaseModel):
+    """MiniSEED/StationXML 示例数据的解析结果。"""
+    scenario_id: str
+    files: dict
+    parsed_with: str
+    stations: list[dict]          # 来自 StationXML (obspy.read_inventory)
+    waveforms: list[WaveformOut]  # 来自 MiniSEED (obspy.read)
+
+
+class SolutionHistoryOut(BaseModel):
+    """持久化的历史定位结果 (绑定模型/引擎/数据版本)。"""
+    id: int | None = None
+    scenario_id: str
+    stage: str
+    status: str
+    status_reasons: list
+    lat: float | None
+    lon: float | None
+    depth_km: float
+    origin_time_s: float | None
+    rms_residual_s: float | None
+    azimuthal_gap_deg: float | None
+    condition_number: float | None = None
+    ellipse_68: dict | None
+    alternate_minimum: dict | None = None
+    residuals: list
+    n_stations: int
+    n_p_picks: int
+    n_s_picks: int
+    model_version: str
+    engine_version: str
+    data_version: str
+    disclaimer: str
+    created_at: str | None
 
 
 class PickResidualOut(BaseModel):

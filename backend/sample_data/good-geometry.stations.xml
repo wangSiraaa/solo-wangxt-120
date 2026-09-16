@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<FDSNStationXML xmlns="http://www.fdsn.org/xml/station/1" schemaVersion="1.2">
+  <Source>geoteach-synthetic</Source>
+  <Module>ObsPy 1.5.1</Module>
+  <ModuleURI>https://www.obspy.org</ModuleURI>
+  <Created>2026-09-15T16:39:47.607131Z</Created>
+  <Network code="GT">
+    <Station code="ST01">
+      <Latitude unit="DEGREES">31.809152088056656</Latitude>
+      <Longitude unit="DEGREES">103.4025822000446</Longitude>
+      <Elevation unit="METERS">0.0</Elevation>
+      <Site>
+        <Name></Name>
+      </Site>
+      <CreationDate>2020-01-01T00:00:00.000000Z</CreationDate>
+    </Station>
+    <Station code="ST02">
+      <Latitude unit="DEGREES">31.41676915402166</Latitude>
+      <Longitude unit="DEGREES">103.99221885644153</Longitude>
+      <Elevation unit="METERS">0.0</Elevation>
+      <Site>
+        <Name></Name>
+      </Site>
+      <CreationDate>2020-01-01T00:00:00.000000Z</CreationDate>
+    </Station>
+    <Station code="ST03">
+      <Latitude unit="DEGREES">31.0225964542963</Latitude>
+      <Longitude unit="DEGREES">104.50568295961452</Longitude>
+      <Elevation unit="METERS">0.0</Elevation>
+      <Site>
+        <Name></Name>
+      </Site>
+      <CreationDate>2020-01-01T00:00:00.000000Z</CreationDate>
+    </Station>
+    <Station code="ST04">
+      <Latitude unit="DEGREES">30.490722949661905</Latitude>
+      <Longitude unit="DEGREES">103.94230664722687</Longitude>
+      <Elevation unit="METERS">0.0</Elevation>
+      <Site>
+        <Name></Name>
+      </Site>
+      <CreationDate>2020-01-01T00:00:00.000000Z</CreationDate>
+    </Station>
+    <Station code="ST05">
+      <Latitude unit="DEGREES">30.152665412260678</Latitude>
+      <Longitude unit="DEGREES">103.34086417130435</Longitude>
+      <Elevation unit="METERS">0.0</Elevation>
+      <Site>
+        <Name></Name>
+      </Site>
+      <CreationDate>2020-01-01T00:00:00.000000Z</CreationDate>
+    </Station>
+    <Station code="ST06">
+      <Latitude unit="DEGREES">30.501441400867268</Latitude>
+      <Longitude unit="DEGREES">102.65068642761625</Longitude>
+      <Elevation unit="METERS">0.0</Elevation>
+      <Site>
+        <Name></Name>
+      </Site>
+      <CreationDate>2020-01-01T00:00:00.000000Z</CreationDate>
+    </Station>
+    <Station code="ST07">
+      <Latitude unit="DEGREES">31.04007593507862</Latitude>
+      <Longitude unit="DEGREES">102.54187936461813</Longitude>
+      <Elevation unit="METERS">0.0</Elevation>
+      <Site>
+        <Name></Name>
+      </Site>
+      <CreationDate>2020-01-01T00:00:00.000000Z</CreationDate>
+    </Station>
+    <Station code="ST08">
+      <Latitude unit="DEGREES">31.61861744498109</Latitude>
+      <Longitude unit="DEGREES">102.6331415595702</Longitude>
+      <Elevation unit="METERS">0.0</Elevation>
+      <Site>
+        <Name></Name>
+      </Site>
+      <CreationDate>2020-01-01T00:00:00.000000Z</CreationDate>
+    </Station>
+  </Network>
+</FDSNStationXML>

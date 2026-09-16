@@ -7,7 +7,9 @@ from fastapi.middleware.cors import CORSMiddleware
 from .api.routes_locate import router as locate_router
 from .api.routes_picks import router as picks_router
 from .api.routes_scenarios import router as scenarios_router
+from .core.sample_data import ensure_sample_data
 from .core.velocity_model import DEFAULT_MODEL, ENGINE_VERSION
+from .store import store
 
 app = FastAPI(
     title="地震定位教学演示",
@@ -17,6 +19,12 @@ app = FastAPI(
     ),
     version=ENGINE_VERSION,
 )
+
+
+@app.on_event("startup")
+def startup():
+    # 确保 MiniSEED/StationXML 示例数据文件存在 (确定性生成, 可复现)
+    ensure_sample_data(store.list())
 
 app.add_middleware(
     CORSMiddleware,

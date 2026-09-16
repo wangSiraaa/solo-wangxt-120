@@ -59,21 +59,6 @@ class Scenario:
         self.raw_picks: list[Pick] = raw_picks
         self.revised_picks: list[Pick] = revised_picks
         self.seed = seed
-        self._waveforms: dict[str, tuple[np.ndarray, np.ndarray]] | None = None
-
-    def waveforms(self, model: VelocityModel = DEFAULT_MODEL):
-        """惰性生成并缓存波形 (按真值走时放置 P/S 波列)。"""
-        if self._waveforms is None:
-            src = self.source
-            self._waveforms = {}
-            for i, sta in enumerate(self.stations.values()):
-                lat0, lon0 = src["lat"], src["lon"]
-                sx, sy = lonlat_to_km(sta.lat, sta.lon, lat0, lon0)
-                d = source_station_distance_km(0.0, 0.0, sx, sy, src["depth_km"])
-                tp = src["origin_time_s"] + travel_time_s(d, "P", model)
-                ts = src["origin_time_s"] + travel_time_s(d, "S", model)
-                self._waveforms[sta.id] = synth_trace_arrays(tp, ts, seed=self.seed + i)
-        return self._waveforms
 
 
 def _true_picks(source, stations, model, rng, noise_s=0.15) -> list[Pick]:
